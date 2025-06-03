@@ -1,21 +1,28 @@
+@font-face {
+    font-family: 'MinhaFonte';
+    src: url('Water\ Galon.ttf');
+    font-weight: normal;
+    font-style: normal;
+  }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-html, body {
+  html, body {
     height: 100%;
-    overflow: hidden; /* Impede rolagem */
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: #040DBF; /* Cor de fundo original */
-    color: #2B96D9; /* Cor de texto original */
+    overflow: hidden;
+    font-family: 'MinhaFonte', sans-serif;
+    background-color: #0396A6;
+    color: #D93D04;
     text-align: center;
-}
+  }
+  
 
 #maze {
     display: grid;
-    grid-template-columns: repeat(30, 35px); /* Ajuste para um grid de 30 colunas */
+    grid-template-columns: repeat(30, 35px);
     gap: 0;
     margin: 20px auto;
     width: max-content;
@@ -24,42 +31,42 @@ html, body {
 .cell {
     width: 35px;
     height: 35px;
-    border: 2px solid #040DBF; /* Borda com a cor de fundo */
+    border: 2px solid #0396A6; 
 }
 
 .cell.wall {
-    background-color: #8C3211; /* Cor original das paredes */
-    border: 2px solid #260101; /* Cor da borda das paredes */
+    background-color: #8C3211;
+    border: 2px solid #260101; 
     border-radius: 4px;
-    box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.4); /* Sombras mais intensas nas paredes */
+    box-shadow: inset 2px 2px 8px rgba(0, 0, 0, 0.4); 
 }
 
 .cell.exit {
-    background-color: green; /* Cor da saída */
+    background-color: green; 
     background-image: url("AlbedoBase_XL_Um_pato_amarelo_fofo_e_estilizado_com_olhos_gran_2.jpg");
-    background-size: cover; /* Imagem de fundo para a saída */
+    background-size: cover;
 }
 
 .cell.player {
-    background-color: blue; /* Cor do jogador */
-    background-image: url("patinho.gif");
-    background-size: cover; /* Imagem de fundo para o jogador */
+    background-color: #0396A6; 
+    background-image: url("patinho\ \(1\).gif");
+    background-size: cover; 
 }
 
 #maze-message {
     position: fixed;
-    top: 50%; /* Centralizado verticalmente */
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Centraliza a mensagem */
-    background-color: #A6056D; /* Cor de fundo da mensagem */
-    color: azure; /* Cor do texto da mensagem */
+    transform: translate(-50%, -50%);
+    background-color: #A6056D; 
+    color: azure;
     padding: 15px 30px;
     font-size: 20px;
     font-weight: bold;
     border-radius: 8px;
-    display: none; /* Inicialmente oculto */
+    display: none;
     z-index: 1000;
-    border: 2px solid #fff; /* Borda branca ao redor da mensagem */
+    border: 2px solid #fff;
 }
 
 #start-screen {
@@ -69,10 +76,10 @@ html, body {
     align-items: center;
     height: 100vh;
 
-    background-image: url('AlbedoBase_XL_Um_pato_amarelo_fofo_e_estilizado_com_olhos_gran_1.jpg'); /* Caminho relativo da imagem */
-    background-size: cover;       /* Faz a imagem cobrir toda a área */
-    background-position: center;  /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Evita repetição da imagem */
+    background-image: url('AlbedoBase_XL_Um_pato_amarelo_fofo_e_estilizado_com_olhos_gran_1.jpg'); 
+    background-size: cover;       
+    background-position: center;  
+    background-repeat: no-repeat; 
 }
 
 
@@ -85,15 +92,15 @@ html, body {
 #start-button, #restart-button {
     padding: 10px 20px;
     font-size: 1.2rem;
-    background-color: #590202; /* Cor do botão */
-    color: white; /* Cor do texto no botão */
+    background-color: #590202;
+    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
 #start-button:hover, #restart-button:hover {
-    background-color: #B64D80; /* Cor ao passar o mouse */
+    background-color: #B64D80; 
 }
 
 #start-image {
@@ -109,27 +116,27 @@ html, body {
     align-items: center;
     height: 100vh;
 
-    background-image: url('AlbedoBase_XL_Um_pato_amarelo_fofo_e_estilizado_com_olhos_gran_3.jpg'); /* Substitua com o caminho correto */
-    background-size: cover;       /* Faz a imagem cobrir toda a área */
-    background-position: center;  /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Evita repetição da imagem */
+    background-image: url('AlbedoBase_XL_Um_pato_amarelo_fofo_e_estilizado_com_olhos_gran_3.jpg'); 
+    background-size: cover;      
+    background-position: center;  
+    background-repeat: no-repeat;
 }
 
 #victory-message {
-    color: #fff; /* Cor do texto, você pode mudar */
+    color: #fff; 
     font-size: 2rem;
     margin-bottom: 20px;
 }
 #game-over-screen {
-    display: none; /* Inicialmente oculta */
+    display: none; 
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
 
-    /* ADICIONAR AQUI 👇 */
-    background-image: url('AlbedoBase_XL_Prompt_em_ingls_para_IA_de_gerao_de_imagemAn_oil_3.jpg'); /* caminho da imagem */
+   
+    background-image: url('AlbedoBase_XL_Prompt_em_ingls_para_IA_de_gerao_de_imagemAn_oil_3.jpg'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -142,12 +149,12 @@ html, body {
 
 #game-over-message {
     text-align: center;
-    background-color: #F23D3D; /* Cor de fundo vermelha para indicar perda */
+    background-color: #F23D3D; 
     color: #590202;
     padding: 30px;
     border-radius: 15px;
     width: 80%;
-    max-width: 500px; /* Limita o tamanho máximo da tela */
+    max-width: 500px; 
 }
 
 #game-over-message h1 {
@@ -163,7 +170,7 @@ html, body {
 #restart-button-game-over {
     padding: 10px 20px;
     font-size: 1.2rem;
-    background-color:  #8C0808; /* Cor do botão */
+    background-color:  #8C0808; 
     color: white;
     border: none;
     border-radius: 5px;
@@ -171,5 +178,5 @@ html, body {
 }
 
 #restart-button-game-over:hover {
-    background-color: #D81B60; /* Cor ao passar o mouse */
+    background-color: #D81B60; 
 }
